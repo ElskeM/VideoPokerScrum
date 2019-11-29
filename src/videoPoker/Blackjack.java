@@ -13,10 +13,10 @@ public class Blackjack {
 	}
 	
 	public void draw() {
-		playerHand.addCards(deck.draw(), deck.draw());
-		dealerHand.addCards(deck.draw(), deck.draw());
+		playerHand.addCards(deck.draw(), deck.draw(), deck.draw(), deck.draw(), deck.draw());
+		// dealerHand.addCards(deck.draw(), deck.draw());
 		System.out.println("Du fick: " + playerHand.getCard(0) + ", " + playerHand.getCard(1) + " (" + playerHand.score() + ")");	
-		System.out.println("Dealern fick: " + dealerHand.getCard(0) + " och ett gömt kort.");
+		// System.out.println("Dealern fick: " + dealerHand.getCard(0) + " och ett gömt kort.");
 		
 		if ( playerHand.score() == 21) {
 			System.out.println("Wow! du fick BLACKJACK.");

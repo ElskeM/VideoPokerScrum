@@ -23,9 +23,12 @@ public class Hand {
 		hand.add(card);
 	}
 	
-	public void addCards(Card card1, Card card2) {
+	public void addCards(Card card1, Card card2, Card card3, Card card4, Card card5) {
 		hand.add(card1);
 		hand.add(card2);
+		hand.add(card3);
+		hand.add(card4);
+		hand.add(card5);
 	}
 	
 	public void reset() {

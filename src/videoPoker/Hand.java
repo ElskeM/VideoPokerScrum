@@ -2,27 +2,28 @@ package videoPoker;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Hand {
 
-	private List<Card> hand; 
-	
+	private List<Card> hand;
+
 	public Hand() {
 		hand = new ArrayList<Card>();
 	}
-	
+
 	public Card getCard(int i) {
 		return hand.get(i);
 	}
-	
+
 	public Card getCard() {
 		return hand.get(hand.size() - 1);
 	}
-	
+
 	public void addCard(Card card) {
 		hand.add(card);
 	}
-	
+
 	public void addCards(Card card1, Card card2, Card card3, Card card4, Card card5) {
 		hand.add(card1);
 		hand.add(card2);
@@ -30,11 +31,20 @@ public class Hand {
 		hand.add(card4);
 		hand.add(card5);
 	}
-	
+
+	public void removeCard(int[] arrayPosition) {
+		ListIterator listIterator = hand.listIterator();
+
+		for (int j = arrayPosition.length - 1; j >= 0; j--) {
+			hand.remove(arrayPosition[j]);
+		}
+
+	}
+
 	public void reset() {
 		hand.clear();
 	}
-	
+
 	public int score() {
 		int score = 0, value = 0, aces = 0;
 		// get all values in hand, add them to score

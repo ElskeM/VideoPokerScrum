@@ -30,7 +30,7 @@ public class Blackjack {
 		do {
 			
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("Vill du byta ut någon kort? y/n");
+			System.out.println("Vill du byta ut något kort? y/n");
 			String answer = scanner.next();
 			
 

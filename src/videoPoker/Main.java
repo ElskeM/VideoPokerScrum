@@ -48,7 +48,7 @@ public class Main {
 		            case 4:
 		            	    System.out.println("|***********************************************************************************************|");
 				            System.out.println("|       Spel regler                                                                           	|");
-				            System.out.println("|	Du kan byta hur många kort ni vill, men bara en  gång 				        |");
+				            System.out.println("|	Du kan byta hur många kort ni vill, men bara en gång 				        |");
 				            System.out.println("|                                                                                               |");
 				            System.out.println("|    9: ROYAL FLUSH             -- Tio, knekt, dam, kung och ess i samma kortsvit         250x  |");
 				            System.out.println("|    8: FÄRGSTEGE               -- Straight Flush - Fem kort i rad i samma kortsvit        50x  |");

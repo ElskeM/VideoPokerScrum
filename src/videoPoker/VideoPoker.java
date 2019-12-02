@@ -40,8 +40,8 @@ public class VideoPoker {
 				int[] arrayPosition = new int[antalKort];
 
 				for (int i = 0; i < arrayPosition.length; i++) {
-					System.out.println("Ange kortens position (0, 1, 2, 3, eller 4");
-					arrayPosition[i] = scanner.nextInt();
+					System.out.println("Ange kortens position (1, 2, 3, 4 eller 5");
+					arrayPosition[i] = scanner.nextInt()-1;
 				}
 				playerHand.removeCard(arrayPosition);
 

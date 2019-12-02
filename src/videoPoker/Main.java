@@ -17,7 +17,7 @@ public class Main {
 
 		        do {
 		            System.out.println("|*********************************|");
-		            System.out.println("|    Vad ville du göra?           |");
+		            System.out.println("|    Vad vill du göra?            |");
 		            System.out.println("|    1: Spela                     |");
 		            System.out.println("|    2: Stand                     |");
 		            System.out.println("|    3: Reset                     |");
@@ -47,8 +47,8 @@ public class Main {
 		                break;
 		            case 4:
 		            	    System.out.println("|***********************************************************************************************|");
-				            System.out.println("|       Spel regler                                                                           	|");
-				            System.out.println("|	Du kan byta hur många kort ni vill, men bara en gång 				        |");
+				            System.out.println("|       Spelregler                                                                           	|");
+				            System.out.println("|	Du kan byta hur många kort du vill, men bara en gång 								        |");
 				            System.out.println("|                                                                                               |");
 				            System.out.println("|    9: ROYAL FLUSH             -- Tio, knekt, dam, kung och ess i samma kortsvit         250x  |");
 				            System.out.println("|    8: FÄRGSTEGE               -- Straight Flush - Fem kort i rad i samma kortsvit        50x  |");

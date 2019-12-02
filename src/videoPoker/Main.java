@@ -2,10 +2,10 @@ package videoPoker;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Välkommen till Blackjack!");
+        System.out.println("Välkommen till VideoPoker!");
         System.out.println("Nu kör vi!");
         System.out.println();
-        Blackjack blackjack = new Blackjack();
+        VideoPoker videoPoker = new VideoPoker();
         
         String s;
         int choice = 0;
@@ -32,16 +32,16 @@ public class Main {
             
             switch (choice) {
             case 1:
-                blackjack.hit();
+                videoPoker.hit();
                 break;
             case 2:
-                blackjack.stand();
+                videoPoker.stand();
                 break;
             case 3:
-                blackjack.reset();
+                videoPoker.reset();
                 break;
             case 0:
-                System.out.println("Tack för att du spelade Blackjack!");
+                System.out.println("Tack för att du spelade VideoPoker!");
                 System.out.println("Vi ses nästa gång!");
                 in.close();
                 break;

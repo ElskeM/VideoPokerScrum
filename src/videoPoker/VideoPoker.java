@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Blackjack {
+public class VideoPoker {
 	private Hand playerHand = new Hand();
 	private Hand dealerHand = new Hand();
 	private Deck deck = new Deck();
 	private int losses = 0;
 	private int wins = 0;
 
-	public Blackjack() {
+	public VideoPoker() {
 		deck.shuffle();
 		draw();
 	}
@@ -59,7 +59,7 @@ public class Blackjack {
 			} 
 			else if (answer.equalsIgnoreCase("n")) {
 				loop = false;
-				stand();	
+				stand();
 			} 
 			else {
 				System.out.println("Fel! Endast 'y' eller 'n'!");
@@ -110,7 +110,7 @@ public class Blackjack {
 
 	public void reset() {
 		playerHand.reset();
-		dealerHand.reset();
+	//	dealerHand.reset();
 		deck = new Deck();
 		deck.shuffle();
 		draw();

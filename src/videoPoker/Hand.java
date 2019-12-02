@@ -38,7 +38,6 @@ public class Hand {
 		for (int j = arrayPosition.length - 1; j >= 0; j--) {
 			hand.remove(arrayPosition[j]);
 		}
-
 	}
 
 	public void reset() {

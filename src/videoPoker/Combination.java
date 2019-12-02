@@ -15,6 +15,9 @@ public enum Combination {
 	public final int value;
 		private Combination(int value) {
 			this.value = value;
+		
 		}
-
+		public int getValue() {
+			return value;
+		}
 }

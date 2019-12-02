@@ -6,7 +6,7 @@ public class Main {
 		        System.out.println("Välkommen till Video Poker");
 		        System.out.println("Nu kör vi!");
 		        System.out.println();
-		        Blackjack blackjack = new Blackjack();
+		        VideoPoker videoPoker = new VideoPoker();
 
 		        String s;
 		        int choice = 0;

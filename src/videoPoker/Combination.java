@@ -2,8 +2,8 @@ package videoPoker;
 
 public enum Combination {
 	
-	RoyalFlush(50),
-	StraightFlush(25),
+	RoyalFlush(250),
+	StraightFlush(50),
 	FourOfaKind(25),
 	FullHouse(9),
 	Flush(6),
@@ -16,6 +16,10 @@ public enum Combination {
 		private Combination(int value) {
 			this.value = value;
 		
+		}
+		
+		public int getValue() {
+			return value;
 		}
 		//public int getValue() {
 			//return value;

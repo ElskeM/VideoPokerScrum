@@ -20,13 +20,14 @@ public class Credit {
 		
 	svar.close();
 	}
-	public double winCredit() {
-		//Combination[] combo = Combination.values();
-		int points = Combination.getValue(); //Detta är ej färdigt än
-		switch(Combination.getValue()) {
-		}
-		return 0.0;
-		
-	}
+//
+//	public double winCredit() {
+//		Combination[] combo = Combination.values();
+//		int points = combination.getValue(); // Detta är ej färdigt än
+//		switch (combination.getValue()) {
+//		}
+//		return 0.0;
+//		
+//	}
 	
 }

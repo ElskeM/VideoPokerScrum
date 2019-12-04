@@ -53,13 +53,13 @@ public class VideoPoker {
 						+ playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", "
 						+ playerHand.getCard(4));
 				
-				stand();
+				System.out.println(playerHand.handScore());
 				loop = false;
 
 			} 
 			else if (answer.equalsIgnoreCase("n")) {
 				loop = false;
-				stand();
+				System.out.println(playerHand.handScore());
 			} 
 			else {
 				System.out.println("Fel! Endast 'y' eller 'n'!");
@@ -70,6 +70,7 @@ public class VideoPoker {
 	}
 
 	public void stand() {
+
 		System.out.println("Här kommer stand metoden :-)");
 //		System.out.println("Här kommer dealerns andra kort: " + dealerHand.getCard(1) + " Dealern har nu: ("
 //				+ dealerHand.score() + ")");

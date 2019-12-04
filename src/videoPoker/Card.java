@@ -1,6 +1,6 @@
 package videoPoker;
 
-public class Card {
+public class Card implements Comparable {
 	private int value;
 	private Suit suit;
 
@@ -37,4 +37,10 @@ public class Card {
 		return "" + value + " " + suit.Type;
 		}
 	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		return getValue() - ((Card) arg0).getValue();
+	}
+	
 }

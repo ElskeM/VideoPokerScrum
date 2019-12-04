@@ -48,24 +48,25 @@ public class Hand {
 
 	public void sortHand() {
 		Collections.sort(hand);
-
 	}
 
 	public String handScore() {
 		sortHand();
 		
-		boolean PairOfJacks = false, TwoPair = false, ThreeOfAKind = false, Straight = false, Flush = false,
-				FullHouse = false, FourOfAKind = false, StraightFlush = false, RoyalFlush = false;
+		boolean Pair = false, PairOfJacks = false, TwoPair = false, ThreeOfAKind = false, Straight = false,
+				Flush = false, FullHouse = false, FourOfAKind = false, StraightFlush = false, RoyalFlush = false;
+		
 		for (int i = 0; i < 4; i++) {
 
 			if (hand.get(i).getValue() == hand.get(i + 1).getValue()
 					&& (i - 1 < 0 || hand.get(i - 1).getValue() != hand.get(i).getValue())
 					&& (i + 2 > 4 || hand.get(i + 2).getValue() != hand.get(i).getValue())) {
-				if (PairOfJacks == true) {
+				if (Pair == true) {
 					TwoPair = true;
+				} if (TwoPair == false) {
+					PairOfJacks = jacksOrBetter();
 				}
-				PairOfJacks = true;
-			}
+			} 
 
 			if ((i < 2) && hand.get(i).getValue() == hand.get(i + 1).getValue()
 					&& hand.get(i + 1).getValue() == hand.get(i + 2).getValue() && hand.get(i + 2) == hand.get(i + 3)) {
@@ -98,7 +99,7 @@ public class Hand {
 
 		FullHouse = ThreeOfAKind & PairOfJacks;
 
-		if (RoyalFlush) 
+		if (RoyalFlush)
 			return "Du har en Royal Flush!";
 		if (StraightFlush)
 			return "Du har en Straight Flush!";
@@ -115,41 +116,41 @@ public class Hand {
 		if (TwoPair)
 			return "Du har Two Pair!";
 		if (PairOfJacks)
-			return "Du har ett Pair!";
-		else 
+			return "Du har ett Pair Jacks or Better!";
+		else
 			return "Du har ingenting!";
-					
+
 	}
 
-	public int score() {
-		int score = 0, value = 0, aces = 0;
+	public boolean jacksOrBetter() {
+		int value = 0, aces = 0, jacks = 0, queens = 0, kings = 0, nothing = 0;
+		boolean jacksOrBetter = false;
 		// get all values in hand, add them to score
 		for (int i = 0; i < hand.size(); i++) {
 			value = hand.get(i).getValue();
 			switch (value) {
 			case 1:
 				aces++;
-				break;
+				//break;
 			case 11:
+				jacks++;
+				//break;
 			case 12:
+				queens++;
+				//break;
 			case 13:
-				score += 10;
-				break;
+				kings++;
+				//break;
 			default:
-				score += value;
-				break;
+				nothing++;
+				//break;
 			}
 		}
-		// check if there are more thanone ace
-		if (aces > 0) {
-			int maxScore = score + 11 + aces - 1;
-
-			if (maxScore <= 21) {
-				return maxScore;
-			}
-			return score + aces;
+		// check if there are more than one highcards
+		if (aces > 1 || jacks > 1 || queens > 1 || kings > 1) {
+			jacksOrBetter = true;
 		}
-		return score;
+		return jacksOrBetter;
 	}
 
 }

@@ -87,27 +87,27 @@ public class VideoPoker {
 //		winner();
 	}
 
-	private void winner() {
-		if (playerHand.score() > 21) {
-			losses++;
-			System.out.println("Du förlorade! (Poäng är högre än 21)");
-			System.out.println("Wins: " + wins + "   Losses: " + losses);
-			System.out.println("------------------------------");
-		} else if (dealerHand.score() >= playerHand.score() && dealerHand.score() <= 21) {
-			losses++;
-			System.out.println("Du förlorade! (Poäng är mindre än/lika med dealerns)");
-			System.out.println("Wins: " + wins + "   Losses: " + losses);
-			System.out.println("------------------------------");
-		} else {
-			wins++;
-			System.out.println("Du vann!");
-			System.out.println("Wins: " + wins + "   Losses: " + losses);
-			System.out.println("------------------------------");
-		}
-		System.out.println("\nVill du köra en gång till? Annars kan du välja 0 för att avsluta spelet.");
-		System.out.println();
-		reset();
-	}
+//	private void winner() {
+//		if (playerHand.score() > 21) {
+//			losses++;
+//			System.out.println("Du förlorade! (Poäng är högre än 21)");
+//			System.out.println("Wins: " + wins + "   Losses: " + losses);
+//			System.out.println("------------------------------");
+//		} else if (dealerHand.score() >= playerHand.score() && dealerHand.score() <= 21) {
+//			losses++;
+//			System.out.println("Du förlorade! (Poäng är mindre än/lika med dealerns)");
+//			System.out.println("Wins: " + wins + "   Losses: " + losses);
+//			System.out.println("------------------------------");
+//		} else {
+//			wins++;
+//			System.out.println("Du vann!");
+//			System.out.println("Wins: " + wins + "   Losses: " + losses);
+//			System.out.println("------------------------------");
+//		}
+//		System.out.println("\nVill du köra en gång till? Annars kan du välja 0 för att avsluta spelet.");
+//		System.out.println();
+//		reset();
+//	}
 
 	public void reset() {
 		playerHand.reset();

@@ -125,25 +125,20 @@ public class Hand {
 	public boolean jacksOrBetter() {
 		int value = 0, aces = 0, jacks = 0, queens = 0, kings = 0, nothing = 0;
 		boolean jacksOrBetter = false;
-		// get all values in hand, add them to score
+	
 		for (int i = 0; i < hand.size(); i++) {
 			value = hand.get(i).getValue();
 			switch (value) {
 			case 1:
 				aces++;
-				//break;
 			case 11:
 				jacks++;
-				//break;
 			case 12:
 				queens++;
-				//break;
 			case 13:
 				kings++;
-				//break;
 			default:
 				nothing++;
-				//break;
 			}
 		}
 		// check if there are more than one highcards

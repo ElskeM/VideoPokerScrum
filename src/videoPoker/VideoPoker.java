@@ -20,10 +20,10 @@ public class VideoPoker {
 		playerHand.addCards(deck.draw(), deck.draw(), deck.draw(), deck.draw(), deck.draw());
 		System.out.println("Du fick: [" + playerHand.getCard(0) + ", " + playerHand.getCard(1) + ", "
 				+ playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", " + playerHand.getCard(4) + "]\n");
-		hit();
+		changeCards();
 	}
 
-	public void hit() {
+	public void changeCards() {
 
 		boolean loop;
 		
@@ -38,7 +38,7 @@ public class VideoPoker {
 				System.out.println("Hur många kort vill du byta ut? (max 5)");
 				int antalKort = scanner.nextInt();
 				int[] arrayPosition = new int[antalKort];
-
+				
 				for (int i = 0; i < arrayPosition.length; i++) {
 					System.out.println("Ange kortens position (1, 2, 3, 4 eller 5)");
 					arrayPosition[i] = scanner.nextInt()-1;

@@ -37,7 +37,7 @@ public class Main {
 		            }
 		            switch (choice) {
 		            case 1:
-		                videoPoker.hit();
+		                videoPoker.changeCards();
 		                break;
 		            case 2:
 		                videoPoker.stand();

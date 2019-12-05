@@ -53,13 +53,13 @@ public class VideoPoker {
 						+ playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", "
 						+ playerHand.getCard(4));
 				
-				System.out.println(playerHand.handScore());
+//				System.out.println(playerHand.handScore());
 				loop = false;
 
 			} 
 			else if (answer.equalsIgnoreCase("n")) {
 				loop = false;
-				System.out.println(playerHand.handScore());
+//				System.out.println(playerHand.handScore());
 			} 
 			else {
 				System.out.println("Fel! Endast 'y' eller 'n'!");

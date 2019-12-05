@@ -50,7 +50,7 @@ public class Hand {
 		Collections.sort(hand);
 	}
 
-	public String handScore() {
+	public Combination handScore() {
 		sortHand();
 		
 		boolean Pair = false, PairOfJacks = false, TwoPair = false, ThreeOfAKind = false, Straight = false,
@@ -100,25 +100,25 @@ public class Hand {
 		FullHouse = ThreeOfAKind & PairOfJacks;
 
 		if (RoyalFlush)
-			return "Du har en Royal Flush!";
+			return Combination.RoyalFlush;
 		if (StraightFlush)
-			return "Du har en Straight Flush!";
+			return Combination.StraightFlush;
 		if (FourOfAKind)
-			return "Du har en Four of a Kind!";
+			return Combination.FourOfaKind;
 		if (FullHouse)
-			return "Du har en FullHouse!";
+			return Combination.FullHouse;
 		if (Flush)
-			return "Du har en Flush!";
+			return Combination.Flush;
 		if (Straight)
-			return "Du har en Straight!";
+			return Combination.Straight;
 		if (ThreeOfAKind)
-			return "Du har en Three of a Kind!";
+			return Combination.ThreeOfaKind;
 		if (TwoPair)
-			return "Du har Two Pair!";
+			return Combination.TwoPair;
 		if (PairOfJacks)
-			return "Du har ett Pair Jacks or Better!";
+			return Combination.PairOfJacks;
 		else
-			return "Du har ingenting!";
+			return ;
 
 	}
 

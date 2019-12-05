@@ -8,12 +8,16 @@ public class VideoPoker {
 	private Hand playerHand = new Hand();
 	private Hand dealerHand = new Hand();
 	private Deck deck = new Deck();
-	private int losses = 0;
-	private int wins = 0;
+	private int credit = 100;
+	private int bet = 0;
+	private int stBet = 10;
+	private String betSvar;
 
 	public VideoPoker() {
 		deck.shuffle();
+		drawCredit();
 		draw();
+
 	}
 
 	public void draw() {
@@ -26,22 +30,21 @@ public class VideoPoker {
 	public void changeCards() {
 
 		boolean loop;
-		
+
 		do {
-			
+
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Vill du byta ut något kort? y/n");
 			String answer = scanner.next();
-			
 
 			if (answer.equalsIgnoreCase("y")) {
 				System.out.println("Hur många kort vill du byta ut? (max 5)");
 				int antalKort = scanner.nextInt();
 				int[] arrayPosition = new int[antalKort];
-				
+
 				for (int i = 0; i < arrayPosition.length; i++) {
 					System.out.println("Ange kortens position (1, 2, 3, 4 eller 5)");
-					arrayPosition[i] = scanner.nextInt()-1;
+					arrayPosition[i] = scanner.nextInt() - 1;
 				}
 				playerHand.removeCard(arrayPosition);
 
@@ -52,16 +55,14 @@ public class VideoPoker {
 				System.out.println("Du har nu följande kort på handen: " + playerHand.getCard(0) + ", "
 						+ playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", "
 						+ playerHand.getCard(4));
-				
-//				System.out.println(playerHand.handScore());
+
+				placeBet();
 				loop = false;
 
-			} 
-			else if (answer.equalsIgnoreCase("n")) {
+			} else if (answer.equalsIgnoreCase("n")) {
+				placeBet();
 				loop = false;
-//				System.out.println(playerHand.handScore());
-			} 
-			else {
+			} else {
 				System.out.println("Fel! Endast 'y' eller 'n'!");
 				loop = true;
 			}
@@ -69,49 +70,63 @@ public class VideoPoker {
 
 	}
 
-//	public void stand() {
-//
-//		System.out.println("Här kommer stand metoden :-)");
-//		System.out.println("Här kommer dealerns andra kort: " + dealerHand.getCard(1) + " Dealern har nu: ("
-//				+ dealerHand.score() + ")");
-//		if (dealerHand.score() < 17) {
-//			System.out.println("Dealern ska ta ett kort till.");
-//		}
-//		// Dealer drar kort tills poäng är mer än 17
-//		while (dealerHand.score() < 17) {
-//			Card card = deck.draw();
-//			dealerHand.addCard(card);
-//			System.out.println("Dealern fick: " + card + " Dealern har nu: (" + dealerHand.score() + ") poäng.");
-//		}
-//		System.out.println("Dealern fick: (" + dealerHand.score() + ") poäng");
-//		winner();
-//	}
+	public void drawCredit() {
+		credit -= stBet;
 
-//	private void winner() {
-//		if (playerHand.score() > 21) {
-//			losses++;
-//			System.out.println("Du förlorade! (Poäng är högre än 21)");
-//			System.out.println("Wins: " + wins + "   Losses: " + losses);
-//			System.out.println("------------------------------");
-//		} else if (dealerHand.score() >= playerHand.score() && dealerHand.score() <= 21) {
-//			losses++;
-//			System.out.println("Du förlorade! (Poäng är mindre än/lika med dealerns)");
-//			System.out.println("Wins: " + wins + "   Losses: " + losses);
-//			System.out.println("------------------------------");
-//		} else {
-//			wins++;
-//			System.out.println("Du vann!");
-//			System.out.println("Wins: " + wins + "   Losses: " + losses);
-//			System.out.println("------------------------------");
-//		}
-//		System.out.println("\nVill du köra en gång till? Annars kan du välja 0 för att avsluta spelet.");
-//		System.out.println();
-//		reset();
-//	}
+	}
+
+	public void placeBet() {
+
+		boolean betLoop;
+
+		do {
+
+			Scanner s = new Scanner(System.in);
+			System.out.println("Vill du placera en bet? y/n");
+			String betSvar = s.next();
+
+			if (betSvar.equalsIgnoreCase("y")) {
+				System.out.println("Hur många credits vill du satsa?");
+				bet = s.nextInt();
+				if (bet > credit) {
+					System.out.println("Fel! Du kan inte satsa mer än " + credit + " credits");
+					betLoop = true;
+				} else {
+					credit -= bet;
+					System.out.println("Du satsade: " + bet
+							+ " credits. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
+					creditAfterBetting();
+					betLoop = false;
+				}
+
+			} else if (betSvar.equalsIgnoreCase("n")) {
+				System.out.println("Du placerade ingen extra bet. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
+				creditAfterBetting();
+				betLoop = false;
+			} else {
+				System.out.println("Fel! Endast 'y' eller 'n'!");
+				betLoop = true;
+			}
+		} while (betLoop != false);
+
+	}
+
+	public void creditAfterBetting() {
+		if (playerHand.handScore() == playerHand.handScore().NoCombination) {
+			System.out.println("Tyvärr! Du fick ingen kombination! Du har nu " + credit + " credits kvar.");
+		} else {
+			bet += stBet;
+			bet *= playerHand.handScore().value;
+			credit += bet;
+			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "credits och har nu "
+					+ credit + " credits i ditt konto.");
+		}
+
+	}
 
 	public void reset() {
 		playerHand.reset();
-	//	dealerHand.reset();
+		// dealerHand.reset();
 		deck = new Deck();
 		deck.shuffle();
 		draw();

@@ -63,11 +63,8 @@ public class Hand {
 					&& (i + 2 > 4 || hand.get(i + 2).getValue() != hand.get(i).getValue())) {
 				if (Pair == true) {
 					TwoPair = true;
-				} if (TwoPair == false) {
-					PairOfJacks = jacksOrBetter();
-				}
+				} Pair = true;
 			} 
-
 			if ((i < 2) && hand.get(i).getValue() == hand.get(i + 1).getValue()
 					&& hand.get(i + 1).getValue() == hand.get(i + 2).getValue() && hand.get(i + 2) == hand.get(i + 3)) {
 				FourOfAKind = true;
@@ -96,8 +93,11 @@ public class Hand {
 				}
 			}
 		}
+		if (Pair == true && TwoPair == false) {
+			PairOfJacks = jacksOrBetter();
+		}
 
-		FullHouse = ThreeOfAKind & PairOfJacks;
+		FullHouse = ThreeOfAKind & Pair;
 
 		if (RoyalFlush)
 			return Combination.RoyalFlush;
@@ -116,9 +116,9 @@ public class Hand {
 		if (TwoPair)
 			return Combination.TwoPair;
 		if (PairOfJacks)
-			return Combination.PairOfJacks;
+				return Combination.PairOfJacksOrBetter;	
 		else
-			return ;
+			return Combination.NoCombination;
 
 	}
 

@@ -10,7 +10,7 @@ public enum Combination {
 	Straight(4),
 	ThreeOfaKind(3),
 	TwoPair(2),
-	PairOfJacks(1),
+	PairOfJacksOrBetter(1),
 	NoCombination(0);
 	
 	public final int value;

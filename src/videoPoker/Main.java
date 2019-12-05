@@ -40,7 +40,7 @@ public class Main {
 		                videoPoker.changeCards();
 		                break;
 		            case 2:
-		                videoPoker.stand();
+//		                videoPoker.stand();
 		                break;
 		            case 3:
 		                videoPoker.reset();

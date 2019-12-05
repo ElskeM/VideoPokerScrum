@@ -69,9 +69,9 @@ public class VideoPoker {
 
 	}
 
-	public void stand() {
-
-		System.out.println("Här kommer stand metoden :-)");
+//	public void stand() {
+//
+//		System.out.println("Här kommer stand metoden :-)");
 //		System.out.println("Här kommer dealerns andra kort: " + dealerHand.getCard(1) + " Dealern har nu: ("
 //				+ dealerHand.score() + ")");
 //		if (dealerHand.score() < 17) {
@@ -85,7 +85,7 @@ public class VideoPoker {
 //		}
 //		System.out.println("Dealern fick: (" + dealerHand.score() + ") poäng");
 //		winner();
-	}
+//	}
 
 //	private void winner() {
 //		if (playerHand.score() > 21) {

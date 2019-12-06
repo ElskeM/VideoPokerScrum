@@ -98,7 +98,7 @@ public class VideoPoker {
 
 	public void creditAfterBetting() {
 		if (playerHand.handScore() == playerHand.handScore().NoCombination) {
-			System.out.println("Tyvärr! Du fick ingen kombination! Du har nu " + credit + " krediter kvar.");
+			System.out.println("\nTyvärr! Du fick ingen kombination! Du har nu " + credit + " krediter kvar.");
 		} else {
 			bet += stBet;
 			bet *= playerHand.handScore().value;

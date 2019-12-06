@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VideoPoker {
-	private Hand playerHand = new Hand();
+	public static Hand playerHand = new Hand();
 	private Hand dealerHand = new Hand();
 	private Deck deck = new Deck();
 	private int credit = 100;

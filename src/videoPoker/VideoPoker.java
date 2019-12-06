@@ -31,7 +31,7 @@ public class VideoPoker {
 		boolean loop;
 		do {
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("Vill du byta ut något kort? y/n");
+			System.out.println("Vill du byta ut några kort? y/n");
 			String answer = scanner.next();
 			if (answer.equalsIgnoreCase("y")) {
 				System.out.println("Hur många kort vill du byta ut? (max 5)");
@@ -45,8 +45,8 @@ public class VideoPoker {
 				for (int i = 0; i < antalKort; i++) {
 					playerHand.addCard(deck.draw());
 				}
-				System.out.println("Du valde att byta ut " + antalKort + " kort.");
-				System.out.println("Du har nu följande kort på handen: " + playerHand.getCard(0) + ", "
+				System.out.println("Du vill byta ut " + antalKort + " kort.");
+				System.out.println("Detta är din hand: " + playerHand.getCard(0) + ", "
 						+ playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", "
 						+ playerHand.getCard(4));
 				placeBet();
@@ -69,24 +69,24 @@ public class VideoPoker {
 		boolean betLoop;
 		do {
 			Scanner s = new Scanner(System.in);
-			System.out.println("Vill du placera en bet? y/n");
+			System.out.println("Vill du betta? y/n");
 			String betSvar = s.next();
 			if (betSvar.equalsIgnoreCase("y")) {
-				System.out.println("Hur många credits vill du satsa?");
+				System.out.println("Hur många krediter vill du satsa?");
 				bet = s.nextInt();
 				if (bet > credit) {
-					System.out.println("Fel! Du kan inte satsa mer än " + credit + " credits");
+					System.out.println("Du kan inte satsa mer än " + credit + " krediter");
 					betLoop = true;
 				} else {
 					credit -= bet;
 					System.out.println("Du satsade: " + bet
-							+ " credits. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
+							+ " krediter.");
 					creditAfterBetting();
 					betLoop = false;
 				}
 			} else if (betSvar.equalsIgnoreCase("n")) {
 				System.out.println(
-						"Du placerade ingen extra bet. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
+						"Du satsade inga extra krediter.");
 				creditAfterBetting();
 				betLoop = false;
 			} else {
@@ -98,7 +98,7 @@ public class VideoPoker {
 
 	public void creditAfterBetting() {
 		if (playerHand.handScore() == playerHand.handScore().NoCombination) {
-			System.out.println("Tyvärr! Du fick ingen kombination! Du har nu " + credit + " credits kvar.");
+			System.out.println("Tyvärr! Du fick ingen kombination! Du har nu " + credit + " krediter kvar.");
 		} else {
 			bet += stBet;
 			bet *= playerHand.handScore().value;
@@ -107,8 +107,8 @@ public class VideoPoker {
 			kontoCredit = credit;
 
 			bet = 0;
-			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "credits och har nu "
-					+ credit + " credits i ditt konto.");
+			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "krediter och har nu "
+					+ credit + " krediter på ditt konto.");
 			bet = 0;
 		}
 	}

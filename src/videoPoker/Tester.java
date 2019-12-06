@@ -1,13 +1,14 @@
 package videoPoker;
-
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba44ebc64f06372ffc5af661ef0289e49c5b2030
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
 public class Tester {
+<<<<<<< HEAD
 	
 	private Card c;
 	private Deck d;
@@ -23,6 +24,19 @@ public class Tester {
 		h = new Hand();
 	}
 	
+=======
+	private Card c;
+	private Deck d;
+	private Hand h;
+//	@Test
+//	void femKort()
+//	{}
+	@BeforeEach
+	void skapaSpel() {
+		d = new Deck();
+		h = new Hand();	
+	}
+>>>>>>> ba44ebc64f06372ffc5af661ef0289e49c5b2030
 	@Test
 	void testScore0() {
 		h.addCard(new Card (9, Suit.Hearts));
@@ -32,7 +46,10 @@ public class Tester {
 		h.addCard(new Card(6, Suit.Spades));
 		assertEquals(Combination.ThreeOfaKind, h.handScore());
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ba44ebc64f06372ffc5af661ef0289e49c5b2030
 	void testScore1() {
 		h.addCard(new Card (12, Suit.Hearts));
 		h.addCard(new Card(12, Suit.Spades));
@@ -41,7 +58,10 @@ public class Tester {
 		h.addCard(new Card(6, Suit.Spades));
 		assertEquals(Combination.FourOfaKind, h.handScore());
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ba44ebc64f06372ffc5af661ef0289e49c5b2030
 	@Test
 	void testScore2() {
 		h.addCard(new Card(11, Suit.Hearts));
@@ -78,5 +98,9 @@ public class Tester {
 //		h.addCard(new Card(13, Suit.Spades));
 //		assertEquals(Combination.RoyalFlush, h.handScore());
 //	}
+<<<<<<< HEAD
 	
 }
+=======
+}
+>>>>>>> ba44ebc64f06372ffc5af661ef0289e49c5b2030

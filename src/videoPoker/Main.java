@@ -6,10 +6,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
+
 public class Main {
 
 	public static void main(String[] args) {
-		
+
 		        System.out.println("Välkommen till Video Poker");
 		        System.out.println("Nu kör vi!");
 		        System.out.println();
@@ -18,7 +19,7 @@ public class Main {
 		        String s;
 		        int choice = 0;
 		        boolean loop = true;
-		        Scanner in = new Scanner(System.in);		     
+		        Scanner in = new Scanner(System.in);
 
 		        do {
 		            System.out.println("|*********************************|");
@@ -33,7 +34,7 @@ public class Main {
 		            s = in.nextLine();
 
 		            try {
-		                choice = Integer.parseInt(s);     
+		                choice = Integer.parseInt(s);
 		                loop = false;
 		            }
 		            catch (Exception e)
@@ -42,6 +43,7 @@ public class Main {
 		            }
 		            switch (choice) {
 		            case 1:
+		            	new Readfile().readfile();
 		                videoPoker.changeCards();
 		                break;
 		            case 2:
@@ -58,7 +60,7 @@ public class Main {
 				            System.out.println("|    9: ROYAL FLUSH             -- Tio, knekt, dam, kung och ess i samma kortsvit         250x  |");
 				            System.out.println("|    8: FÄRGSTEGE               -- Straight Flush - Fem kort i rad i samma kortsvit        50x  |");
 				            System.out.println("|    7: FYRTAL                  -- Fyra kort med samma valör                               25x  |");
-				            System.out.println("|    6: KÅK                     -- Ett par och en triss                                     9x  |");  
+				            System.out.println("|    6: KÅK                     -- Ett par och en triss                                     9x  |");
 				            System.out.println("|    5: FÄRG                    -- Fem kort med samma kortsvit                              6x  |");
 				            System.out.println("|    4: STEGE                   -- Fem kort i rad                                           4x  |");
 				            System.out.println("|    3: TRISS                   -- Tre kort med samma valör                                 3x  |");
@@ -67,6 +69,7 @@ public class Main {
 				            System.out.println("|***********************************************************************************************|");
 				            break;
 		            case 0:
+		            	new WriteFile().writeFile(videoPoker.getCredit());
 		                System.out.println("Tack för att du spelade Video Poker!");
 		                System.out.println("Vi ses nästa gång!");
 		                in.close();
@@ -77,27 +80,3 @@ public class Main {
 		            }
 
 		        } while (choice != 0);
-		        
-//				BufferedWriter bw = null;
-//				try {
-//					String profile = "Detta skrivs till filen";
-//					File file = new File("src/testes/myfile.txt");
-//					if (!file.exists()) {
-//						file.createNewFile();
-//					}
-//					FileWriter fw = new FileWriter(file);
-//					bw = new BufferedWriter(fw);
-//					bw.write(profile);
-//					System.out.println("Filen har skrivits");
-//				} catch (IOException ioe) {
-//					ioe.printStackTrace();
-//				} finally {
-//					try {
-//						if (bw != null)
-//							bw.close();
-//					} catch (Exception ex) {
-//						System.out.println("Fel vid stängning av BufferedWriterr" + ex);
-//					}
-//				}
-		    }
-		}

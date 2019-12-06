@@ -1,7 +1,9 @@
 package videoPoker;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 public class VideoPoker {
 	public static Hand playerHand = new Hand();
 	private Hand dealerHand = new Hand();
@@ -11,17 +13,20 @@ public class VideoPoker {
 	private int bet = 0;
 	private int stBet = 10;
 	private String betSvar;
+
 	public VideoPoker() {
 		deck.shuffle();
 		drawCredit();
 		draw();
 	}
+
 	public void draw() {
 		playerHand.addCards(deck.draw(), deck.draw(), deck.draw(), deck.draw(), deck.draw());
 		System.out.println("Du fick: [" + playerHand.getCard(0) + ", " + playerHand.getCard(1) + ", "
 				+ playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", " + playerHand.getCard(4) + "]\n");
 		changeCards();
 	}
+
 	public void changeCards() {
 		boolean loop;
 		do {
@@ -55,9 +60,11 @@ public class VideoPoker {
 			}
 		} while (loop != false);
 	}
+
 	public void drawCredit() {
 		credit -= stBet;
 	}
+
 	public void placeBet() {
 		boolean betLoop;
 		do {
@@ -78,7 +85,8 @@ public class VideoPoker {
 					betLoop = false;
 				}
 			} else if (betSvar.equalsIgnoreCase("n")) {
-				System.out.println("Du placerade ingen extra bet. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
+				System.out.println(
+						"Du placerade ingen extra bet. Nu ska vi kontrollera dina kort på möjliga kombinationer.");
 				creditAfterBetting();
 				betLoop = false;
 			} else {
@@ -87,6 +95,7 @@ public class VideoPoker {
 			}
 		} while (betLoop != false);
 	}
+
 	public void creditAfterBetting() {
 		if (playerHand.handScore() == playerHand.handScore().NoCombination) {
 			System.out.println("Tyvärr! Du fick ingen kombination! Du har nu " + credit + " credits kvar.");
@@ -94,15 +103,25 @@ public class VideoPoker {
 			bet += stBet;
 			bet *= playerHand.handScore().value;
 			credit += bet;
-<<<<<<< HEAD
+
 			kontoCredit = credit;
-=======
->>>>>>> 4a6da1128679dd12188488fdb2f1747de1805e5e
+
 			bet = 0;
 			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "credits och har nu "
 					+ credit + " credits i ditt konto.");
 		}
 	}
+
+	public int setCredit(int credit) {
+		this.kontoCredit = credit;
+		return kontoCredit;
+	}
+
+	public int getCredit() {
+		return kontoCredit;
+
+	}
+
 	public void reset() {
 		playerHand.reset();
 		deck = new Deck();

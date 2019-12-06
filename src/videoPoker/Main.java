@@ -45,7 +45,7 @@ JOptionPane.showMessageDialog(null, regler);
 
 				
 		            s = in.nextLine();
-		            VideoPoker videoPoker= new VideoPoker() ;
+		            
 		            try {
 		                choice = Integer.parseInt(s);
 		                loop = false;
@@ -54,6 +54,7 @@ JOptionPane.showMessageDialog(null, regler);
 		            {
 		                System.out.println("Felaktig inmatning! Endast tal!");
 		            }
+		            VideoPoker videoPoker= new VideoPoker() ;
 		            switch (choice) {
 		            case 1:
 		            	
@@ -61,7 +62,7 @@ JOptionPane.showMessageDialog(null, regler);
 		                videoPoker.changeCards();
 		                break;
 		            case 2:
-		            	VideoPoker videoPoker2= new VideoPoker() ;
+		            	videoPoker= new VideoPoker() ;
 		                break;
 		           		            
 		            case 0:		            	

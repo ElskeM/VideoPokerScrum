@@ -64,6 +64,9 @@ public class Hand {
 				if (Pair == true) {
 					TwoPair = true;
 				} Pair = true;
+				if (Pair == true && TwoPair == false) {
+					PairOfJacks = jacksOrBetter();
+				}
 			} 
 			if ((i < 2) && hand.get(i).getValue() == hand.get(i + 1).getValue()
 					&& hand.get(i + 1).getValue() == hand.get(i + 2).getValue() && hand.get(i + 2) == hand.get(i + 3)) {
@@ -93,9 +96,7 @@ public class Hand {
 				}
 			}
 		}
-		if (Pair == true && TwoPair == false) {
-			PairOfJacks = jacksOrBetter();
-		}
+		
 
 		FullHouse = ThreeOfAKind & Pair;
 
@@ -124,7 +125,7 @@ public class Hand {
 
 	public boolean jacksOrBetter() {
 		int value = 0, aces = 0, jacks = 0, queens = 0, kings = 0, nothing = 0;
-		boolean jacksOrBetter = false;
+		boolean jacksOrBetter;
 	
 		for (int i = 0; i < hand.size(); i++) {
 			value = hand.get(i).getValue();
@@ -142,10 +143,12 @@ public class Hand {
 			}
 		}
 		// check if there are more than one highcards
-		if (aces > 1 || jacks > 1 || queens > 1 || kings > 1) {
-			jacksOrBetter = true;
+		if (aces == 2 || jacks == 2 || queens == 2 || kings ==2) {
+			return jacksOrBetter = true;
+		} else {
+			return jacksOrBetter = false;	
 		}
-		return jacksOrBetter;
+		
 	}
 
 }

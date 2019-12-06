@@ -68,7 +68,7 @@ public class Main {
 				            System.out.println("|    1: PAR                     -- Två knektar eller bättre                                 1x  |");
 				            System.out.println("|***********************************************************************************************|");
 				            break;
-		            case 0:
+		            case 0:		            	
 		            	new WriteFile().writeFile(videoPoker.getCredit());
 		                System.out.println("Tack för att du spelade Video Poker!");
 		                System.out.println("Vi ses nästa gång!");
@@ -80,3 +80,6 @@ public class Main {
 		            }
 
 		        } while (choice != 0);
+		        
+	}
+}

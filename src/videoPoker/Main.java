@@ -10,8 +10,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-
-
 		        System.out.println("Välkommen till Video Poker");
 		        System.out.println("Nu kör vi!");
 		        System.out.println();

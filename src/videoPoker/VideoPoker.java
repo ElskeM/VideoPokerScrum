@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class VideoPoker {
-	private Hand playerHand = new Hand();
+	public static Hand playerHand = new Hand();
 	private Hand dealerHand = new Hand();
 	private Deck deck = new Deck();
 	private int credit = 100;
@@ -94,7 +94,10 @@ public class VideoPoker {
 			bet += stBet;
 			bet *= playerHand.handScore().value;
 			credit += bet;
+<<<<<<< HEAD
 			kontoCredit = credit;
+=======
+>>>>>>> 4a6da1128679dd12188488fdb2f1747de1805e5e
 			bet = 0;
 			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "credits och har nu "
 					+ credit + " credits i ditt konto.");

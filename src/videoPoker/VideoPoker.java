@@ -118,6 +118,7 @@ public class VideoPoker {
 			bet += stBet;
 			bet *= playerHand.handScore().value;
 			credit += bet;
+			bet = 0;
 			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "credits och har nu "
 					+ credit + " credits i ditt konto.");
 		}
@@ -126,10 +127,10 @@ public class VideoPoker {
 
 	public void reset() {
 		playerHand.reset();
-		// dealerHand.reset();
 		deck = new Deck();
 		deck.shuffle();
 		draw();
+		drawCredit();
 	}
 
 }

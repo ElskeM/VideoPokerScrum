@@ -26,9 +26,9 @@ public class Main {
 
 JOptionPane.showMessageDialog(null, regler);
 
-	
+
 		System.out.println();
-      
+
 
 		        String s;
 		        int choice = 0;
@@ -36,16 +36,16 @@ JOptionPane.showMessageDialog(null, regler);
 		        Scanner in = new Scanner(System.in);
 
 		        do {
-				System.out.println("|*********************************|\n" 
+				System.out.println("|*********************************|\n"
 								 + "|    Vad vill du göra?            |\n"
-								 + "|    1: Spela med konto           |\n"  
+								 + "|    1: Spela med konto           |\n"
 								 + "|    2: Spela utan konto          |\n"
 								  +"|    0: Quit                      |\n"
 								 + "|*********************************|");
 
-				
+
 		            s = in.nextLine();
-		            
+
 		            try {
 		                choice = Integer.parseInt(s);
 		                loop = false;
@@ -64,19 +64,19 @@ JOptionPane.showMessageDialog(null, regler);
 		            case 2:
 		            	videoPoker= new VideoPoker() ;
 		                break;
-		           		            
-		            case 0:		            	
+
+		            case 0:
 		            	new WriteFile().writeFile(videoPoker.getCredit());
 		                System.out.println("Tack för att du spelade Video Poker!");
 		                System.out.println("Vi ses nästa gång!");
 		                in.close();
 		                break;
-		            default:	
+		            default:
 		                    System.out.println("Felaktig inmatning!");
 		                    break;
 		            }
 
 		        } while (choice != 0);
-		        
+
 	}
 }

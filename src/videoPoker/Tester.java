@@ -11,26 +11,16 @@ public class Tester {
 	private Deck d;
 	private Hand h;
 	
-//	@Test
-//	void femKort()
-//	{}
-	
-	@BeforeEach
-	void skapaSpel() {
-		d = new Deck();
-		h = new Hand();
-	}
-	
 
-
-//	@Test
-//	void femKort()
-//	{}
 	@BeforeEach
 	void skapaSpel2() {
 		d = new Deck();
 		h = new Hand();	
 	}
+	
+//	@Test
+//	void femKort()
+//	{}
 
 	@Test
 	void testScore0() {
@@ -41,8 +31,6 @@ public class Tester {
 		h.addCard(new Card(6, Suit.Spades));
 		assertEquals(Combination.ThreeOfaKind, h.handScore());
 	}
-
-	
 
 	void testScore1() {
 		h.addCard(new Card (12, Suit.Hearts));
@@ -62,6 +50,7 @@ public class Tester {
 		h.addCard(new Card(4, Suit.Spades));
 		assertEquals(Combination.PairOfJacksOrBetter, h.handScore());
 	}
+	
 	@Test
 	void testScore3() {
 		h.addCard(new Card(2, Suit.Spades));
@@ -71,6 +60,7 @@ public class Tester {
 		h.addCard(new Card(10, Suit.Spades));
 		assertEquals(Combination.Flush, h.handScore());
 	}
+	
 	@Test
 	void testScore4() {
 		h.addCard(new Card(2, Suit.Spades));

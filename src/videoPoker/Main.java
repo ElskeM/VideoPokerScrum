@@ -57,9 +57,11 @@ JOptionPane.showMessageDialog(null, regler);
 		            VideoPoker videoPoker= new VideoPoker() ;
 		            switch (choice) {
 		            case 1:
+		            	videoPoker= new VideoPoker(new Readfile().readfile());
+		            	//skickar värde av sparade spel till konstruktor i VideoPoker klass
 		            	
-		            	new Readfile().readfile();
-		                videoPoker.changeCards();
+		            	//new Readfile().readfile();
+		               //videoPoker.changeCards();
 		                break;
 		            case 2:
 		            	videoPoker= new VideoPoker() ;

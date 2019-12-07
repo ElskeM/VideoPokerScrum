@@ -14,6 +14,14 @@ public class VideoPoker {
 	private int stBet = 10;
 	private String betSvar;
 
+	//konstruktor-sambad med ReadFile
+	public VideoPoker(String gamlaScore) {// får värde från manin
+										//- videoPoker= new VideoPoker(new Readfile().readfile());
+		deck.shuffle();
+		drawCredit();
+		draw();
+	}
+	
 	public VideoPoker() {
 		deck.shuffle();
 		drawCredit();
@@ -106,7 +114,7 @@ public class VideoPoker {
 
 			kontoCredit = credit;
 
-			bet = 0;
+			//bet = 0;
 			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "krediter och har nu "
 					+ credit + " krediter på ditt konto.");
 			bet = 0;

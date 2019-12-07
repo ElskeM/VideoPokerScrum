@@ -113,13 +113,12 @@ public class VideoPoker {
 		}
 	}
 
-	public int setCredit(int credit) {
-		this.kontoCredit = credit;
-		return kontoCredit;
+	public void setCredit(int credit) {
+		this.credit = credit;
 	}
 
 	public int getCredit() {
-		return kontoCredit;
+		return credit;
 
 	}
 

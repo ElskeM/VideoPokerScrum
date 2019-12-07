@@ -8,20 +8,20 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-
-		String regler =   "************************************************************************************************\n"
-				+ "       Spelregler                                                                               \n"
-				+ "	Du kan byta hur många kort du vill, men bara en gång 								           \n"
-				+ "                                                                                                \n"
-				+ "    9: ROYAL FLUSH             -- Tio, knekt, dam, kung och ess i samma kortsvit          250x  \n"
-				+ "    8: FÄRGSTEGE               -- Straight Flush - Fem kort i rad i samma kortsvit         50x  \n"
-				+ "    7: FYRTAL                  	-- Fyra kort med samma valör                      25x  \n"
-				+ "    6: KÅK                    	 -- Ett par och en triss                           9x  \n"
-				+ "    5: FÄRG                   	 -- Fem kort med samma kortsvit                     6x  \n"
-				+ "    4: STEGE                  	 -- Fem kort i rad                                 4x  \n"
-				+ "    3: TRISS                  	 -- Tre kort med samma valör                       3x  \n"
-				+ "    1: PAR                    	 -- Två knektar eller bättre                       1x  \n"
-				+ "************************************************************************************************\n";
+		System.out.println("Välkommen till VideoPoker! Du har " + new Readfile().readfile() + " krediter");
+		String regler =   "***************************************************************************************************\n"
+						+ "       Spelregler                                                                                  \n"
+						+ "	      Du kan byta hur många kort du vill, men bara en gång 								          \n"
+						+ "                                                                                                   \n"
+						+ "    9: ROYAL FLUSH                -- Tio, knekt, dam, kung och ess i samma kortsvit          250x  \n"
+						+ "    8: FÄRGSTEGE                  -- Straight Flush - Fem kort i rad i samma kortsvit         50x  \n"
+						+ "    7: FYRTAL                  	 -- Fyra kort med samma valör                                25x  \n"
+						+ "    6: KÅK                    	 -- Ett par och en triss                                      9x  \n"
+						+ "    5: FÄRG                   	 -- Fem kort med samma kortsvit                               6x  \n"
+						+ "    4: STEGE                  	 -- Fem kort i rad                                            4x  \n"
+						+ "    3: TRISS                  	 -- Tre kort med samma valör                                  3x  \n"
+						+ "    1: PAR                    	 -- Två knektar eller bättre                                  1x  \n"
+						+ "***************************************************************************************************\n";
 
 
 JOptionPane.showMessageDialog(null, regler);
@@ -57,8 +57,8 @@ JOptionPane.showMessageDialog(null, regler);
 		            VideoPoker videoPoker= new VideoPoker() ;
 		            switch (choice) {
 		            case 1:
-		            	
-		            	new Readfile().readfile();
+		            	int credit = Integer.parseInt(new Readfile().readfile());
+		            	videoPoker.setCredit(credit);
 		                videoPoker.changeCards();
 		                break;
 		            case 2:

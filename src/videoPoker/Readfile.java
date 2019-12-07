@@ -21,11 +21,9 @@ public class Readfile {
 		}
 		BufferedReader br = new BufferedReader(fr);
 
-		String line = " ";
+		String line = "";
 		try {
-			while ((line = br.readLine()) != null) {
-				System.out.println(line);
-			}
+				line = br.readLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

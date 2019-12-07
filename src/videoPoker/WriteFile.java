@@ -16,7 +16,7 @@ public class WriteFile {
 	
 
 		try {
-			String profile = " ";
+			String credit = "" + i;
 			File file = new File("src/videoPoker/sparadSpel.txt");
 			System.out.println(file.getAbsolutePath());
 			if (!file.exists()) {
@@ -24,7 +24,7 @@ public class WriteFile {
 			}
 			FileWriter fw = new FileWriter(file);
 			bw = new BufferedWriter(fw);
-			bw.write(profile);
+			bw.write(credit);
 			System.out.println("Filen har skrivits");
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

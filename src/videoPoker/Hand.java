@@ -33,13 +33,13 @@ public class Hand {
 		hand.add(card4);
 		hand.add(card5);
 	}
-	
+
 	public int getSize() {
-		
+
 		return hand.size();
-		
+
 	}
-	
+
 	public void removeCard(int[] arrayPosition) {
 		ListIterator listIterator = hand.listIterator();
 
@@ -48,12 +48,11 @@ public class Hand {
 		}
 	}
 
-	public Card removeCard2(int position) {//copy av medoden över,pga JUnit
-		
-			return hand.set(3, new Card(1, Suit.Clubs));
+	public Card removeCard2(int position) {// copy av medoden över,pga JUnit
+
+		return hand.set(3, new Card(1, Suit.Clubs));
 	}
-	
-	
+
 	public void reset() {
 		hand.clear();
 	}
@@ -167,15 +166,7 @@ public class Hand {
 	}
 
 	public void removeCard(int i) {
-			hand.remove(i);
-		
+		hand.remove(i);
 	}
-
-//	public void add(int value, Suit suit) {
-//		
-//		
-//	}
-
-	
 
 }

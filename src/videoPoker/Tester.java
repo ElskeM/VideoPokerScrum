@@ -1,14 +1,7 @@
 package videoPoker;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,9 +18,6 @@ public class Tester {
 		h = new Hand();
 	}
 
-//	@Test
-//	void femKort()
-//	{}
 
 	@Test
 	void testScoreThreeOfaKind() {

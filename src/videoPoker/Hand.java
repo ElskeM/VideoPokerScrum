@@ -146,7 +146,7 @@ package videoPoker;
 				}
 			}
 			// check if there are more than one highcards
-			if (aces == 2 || jacks == 2 || queens == 2 || kings ==2) {
+			if (aces == 2 || jacks == 2 || queens == 2 || kings == 2) {
 				return jacksOrBetter = true;
 			} else {
 				return jacksOrBetter = false;	

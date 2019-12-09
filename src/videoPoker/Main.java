@@ -12,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Regel regel = new Regel();
+	//	Regel regel = new Regel();
 		System.out.println();
 
 		String s;
@@ -23,10 +23,11 @@ public class Main {
 
 		do {
 			System.out.println("|*********************************|\n" + "|    Vad vill du göra?            |\n"
-					+ "|    1: Spela med konto           |\n" + "|    2: Spela utan konto          |\n"
+					+ "|    1: Start VideoPoker          |\n" + "|    2: Fortsätta spela           |\n"
 					+ "|    0: Quit                      |\n" + "|*********************************|");
 
 			s = in.nextLine();
+			
 
 			try {
 				choice = Integer.parseInt(s);
@@ -34,15 +35,16 @@ public class Main {
 			} catch (Exception e) {
 				System.out.println("Felaktig inmatning! Endast tal!");
 			}
-
+			
+			
 			switch (choice) {
-			case 1:
+			case 1:	
 				int credit = Integer.parseInt(new Readfile().readfile());
 				videoPoker.setCredit(credit);
-				videoPoker.changeCards();
+				videoPoker.draw();
 				break;
 			case 2:
-				videoPoker = new VideoPoker();
+				videoPoker.reset();
 				break;
 			case 0:
 				new WriteFile().writeFile(videoPoker.getCredit());

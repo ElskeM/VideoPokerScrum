@@ -100,11 +100,10 @@ class Regel extends JFrame {
 
 		add(reg);// placera reg i fönster
 		reg.setOpaque(true);
-		reg.setBackground(Color.GREEN);
+		reg.setBackground(new Color(0,153,0));
 		reg.setForeground(Color.BLACK);
-		reg.setFont((new Font("SansSerif", Font.ITALIC, 12)));
-
-		setSize(900, 600);
+		reg.setFont((new Font("SansSerif", Font.BOLD, 12)));
+		setSize(950, 650);
 		setVisible(true);
 
 	}

@@ -115,9 +115,10 @@ public class VideoPoker {
 				bet = 0;
 				cAB = false;
 			
-		} while (cAB != false);
-		
+		} 
+	}while (cAB != false);	
 	}
+	
 
 	public void setCredit(int credit) {
 		this.credit = credit;

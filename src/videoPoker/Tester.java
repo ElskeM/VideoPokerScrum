@@ -23,7 +23,7 @@ public class Tester {
 //	{}
 
 	@Test
-	void testScore0() {
+	void testScoreThreeOfaKind() {
 		h.addCard(new Card (9, Suit.Hearts));
 		h.addCard(new Card(9, Suit.Spades));
 		h.addCard(new Card(9, Suit.Clubs));
@@ -32,7 +32,7 @@ public class Tester {
 		assertEquals(Combination.ThreeOfaKind, h.handScore());
 	}
 
-	void testScore1() {
+	void testScoreFourOfaKind() {
 		h.addCard(new Card (12, Suit.Hearts));
 		h.addCard(new Card(12, Suit.Spades));
 		h.addCard(new Card(12, Suit.Clubs));
@@ -42,7 +42,7 @@ public class Tester {
 	}
 
 	@Test
-	void testScore2() {
+	void testScoreJacksOrBetter() {
 		h.addCard(new Card(11, Suit.Hearts));
 		h.addCard(new Card(11, Suit.Diamonds));
 		h.addCard(new Card(6, Suit.Clubs));
@@ -52,7 +52,7 @@ public class Tester {
 	}
 	
 	@Test
-	void testScore3() {
+	void testScoreFlush() {
 		h.addCard(new Card(2, Suit.Spades));
 		h.addCard(new Card(3, Suit.Spades));
 		h.addCard(new Card(5, Suit.Spades));
@@ -62,7 +62,7 @@ public class Tester {
 	}
 	
 	@Test
-	void testScore4() {
+	void testScoreStrightFlush() {
 		h.addCard(new Card(2, Suit.Spades));
 		h.addCard(new Card(3, Suit.Spades));
 		h.addCard(new Card(4, Suit.Spades));
@@ -71,7 +71,7 @@ public class Tester {
 		assertEquals(Combination.StraightFlush, h.handScore());
 	}
 //	@Test
-//	void testScore5() {
+//	void testScoreRoyalFlush() {
 //		h.addCard(new Card(1, Suit.Spades));
 //		h.addCard(new Card(10, Suit.Spades));
 //		h.addCard(new Card(11, Suit.Spades));
@@ -79,7 +79,36 @@ public class Tester {
 //		h.addCard(new Card(13, Suit.Spades));
 //		assertEquals(Combination.RoyalFlush, h.handScore());
 //	}
-
+	
+	@Test
+	void testScoreFullHouse() {
+		h.addCard(new Card(10, Suit.Spades));
+		h.addCard(new Card(10, Suit.Diamonds));
+		h.addCard(new Card(8, Suit.Spades));
+		h.addCard(new Card(8, Suit.Clubs));
+		h.addCard(new Card(8, Suit.Diamonds));
+		assertEquals(Combination.FullHouse, h.handScore());
+	}
+	
+	@Test
+	void testScoreNoCombination() {
+		h.addCard(new Card(2, Suit.Spades));
+		h.addCard(new Card(3, Suit.Diamonds));
+		h.addCard(new Card(5, Suit.Spades));
+		h.addCard(new Card(8, Suit.Clubs));
+		h.addCard(new Card(10, Suit.Spades));
+		assertEquals(Combination.NoCombination, h.handScore());
+	}
+	
+	@Test
+	void testScoreNoCombinationPair() {
+		h.addCard(new Card(2, Suit.Spades));
+		h.addCard(new Card(3, Suit.Diamonds));
+		h.addCard(new Card(5, Suit.Spades));
+		h.addCard(new Card(10, Suit.Clubs));
+		h.addCard(new Card(10, Suit.Spades));
+		assertEquals(Combination.NoCombination, h.handScore());
+	}
 	
 }
 

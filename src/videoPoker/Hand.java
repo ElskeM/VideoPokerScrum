@@ -77,7 +77,7 @@ public class Hand {
 					TwoPair = true;
 				}
 				Pair = true;
-				if (Pair == true && TwoPair == false) {
+				if (TwoPair == false) {
 					PairOfJacks = jacksOrBetter();
 				}
 			}

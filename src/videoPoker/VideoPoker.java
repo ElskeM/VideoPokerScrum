@@ -40,8 +40,11 @@ public class VideoPoker {
 		System.out.println("Du har satsat standard betten av 10 krediter.\nDu fick följande korter: ["
 				+ playerHand.getCard(0) + ", " + playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", "
 				+ playerHand.getCard(3) + ", " + playerHand.getCard(4) + "]\n");
+		
 		placeBet();
 	}
+	
+
 
 	public void changeCards() {
 		boolean loop;
@@ -120,7 +123,7 @@ public class VideoPoker {
 				bet *= playerHand.handScore().value;
 				credit += bet;
 				System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet
-						+ "krediter (ditt bet inkl 10 krediter standard bet) och har nu " + credit
+						+ "krediter (ditt bet inkl 10 krediter standard bet) \noch har nu " + credit
 						+ " krediter på ditt konto.");
 				bet = 0;
 				cAB = false;

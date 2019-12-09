@@ -12,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		System.out.println("Välkommen till VideoPoker! Du har " + new Readfile().readfile() + " krediter");
+//		System.out.println("Välkommen till VideoPoker! Du har " + new Readfile().readfile() + " krediter");
 
 		Regel regel = new Regel();
 

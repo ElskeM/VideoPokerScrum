@@ -12,18 +12,20 @@ public class Main {
 
 	public static void main(String[] args) {
 
-	//	Regel regel = new Regel();
+	
 		System.out.println();
 
 		String s;
 		int choice = 0;
 		boolean loop = true;
 		Scanner in = new Scanner(System.in);
+		System.out.println("Välkommen till VideoPoker! Nu kör vi!");
+		System.out.println();
 		VideoPoker videoPoker = new VideoPoker();
 
 		do {
 			System.out.println("|*********************************|\n" + "|    Vad vill du göra?            |\n"
-					+ "|    1: Start VideoPoker          |\n" + "|    2: Fortsätta spela           |\n"
+					+ "|    1: Fortsätta spela           |\n" + "|    2: Visa regler               |\n"
 					+ "|    0: Quit                      |\n" + "|*********************************|");
 
 			s = in.nextLine();
@@ -37,20 +39,19 @@ public class Main {
 			}
 			
 			
+			
 			switch (choice) {
 			case 1:	
-				int credit = Integer.parseInt(new Readfile().readfile());
-				videoPoker.setCredit(credit);
-				videoPoker.draw();
+				videoPoker.reset();
 				break;
 			case 2:
-				videoPoker.reset();
+				Regel regel = new Regel();
 				break;
 			case 0:
 				new WriteFile().writeFile(videoPoker.getCredit());
 				System.out.println("Tack för att du spelade Video Poker!");
 				System.out.println("Vi ses nästa gång!");
-				in.close();
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Felaktig inmatning!");

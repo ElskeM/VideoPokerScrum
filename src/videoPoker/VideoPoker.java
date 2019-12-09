@@ -14,14 +14,21 @@ public class VideoPoker {
 	private String betSvar;
 
 	// konstruktor-samband med ReadFile
-	public VideoPoker(String gamlaScore) {// får värde från manin
-											// - videoPoker= new VideoPoker(new Readfile().readfile());
-		deck.shuffle();
-		drawCredit();
-		draw();
+	// får värde från manin// - videoPoker= new VideoPoker(new Readfile().readfile());
+	public VideoPoker() {
+		int sparadS = Integer.parseInt(new Readfile().readfile());
+		if (sparadS == 0) {
+			setCredit(credit);
+			startSpel();
+		} else {
+			setCredit(sparadS);
+			System.out.println("Du har " + sparadS + " krediter på ditt konto.");
+			startSpel();	
+		}	
 	}
 
-	public VideoPoker() {
+	public void startSpel() {
+		
 		deck.shuffle();
 		drawCredit();
 		draw();

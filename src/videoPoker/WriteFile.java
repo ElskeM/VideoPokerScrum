@@ -18,7 +18,6 @@ public class WriteFile {
 		try {
 			String credit = "" + i;
 			File file = new File("src/videoPoker/sparadSpel.txt");
-			System.out.println(file.getAbsolutePath());
 			if (!file.exists()) {
 				file.createNewFile();
 			}

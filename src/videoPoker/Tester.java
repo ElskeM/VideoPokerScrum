@@ -43,12 +43,21 @@ public class Tester {
 
 	@Test
 	void testScoreJacksOrBetter() {
-		h.addCard(new Card(11, Suit.Hearts));
-		h.addCard(new Card(11, Suit.Diamonds));
+		h.addCard(new Card(12, Suit.Hearts));
+		h.addCard(new Card(12, Suit.Diamonds));
 		h.addCard(new Card(6, Suit.Clubs));
 		h.addCard(new Card(7, Suit.Spades));
 		h.addCard(new Card(4, Suit.Spades));
 		assertEquals(Combination.PairOfJacksOrBetter, h.handScore());
+	}
+	@Test
+	void testScoreTwoPair() {
+		h.addCard(new Card(12, Suit.Hearts));
+		h.addCard(new Card(12, Suit.Diamonds));
+		h.addCard(new Card(7, Suit.Clubs));
+		h.addCard(new Card(7, Suit.Spades));
+		h.addCard(new Card(4, Suit.Spades));
+		assertEquals(Combination.TwoPair, h.handScore());
 	}
 	
 	@Test
@@ -62,7 +71,17 @@ public class Tester {
 	}
 	
 	@Test
-	void testScoreStrightFlush() {
+	void testScoreStraight() {
+		h.addCard(new Card(2, Suit.Spades));
+		h.addCard(new Card(3, Suit.Clubs));
+		h.addCard(new Card(4, Suit.Spades));
+		h.addCard(new Card(5, Suit.Hearts));
+		h.addCard(new Card(6, Suit.Spades));
+		assertEquals(Combination.Straight, h.handScore());
+	}
+	
+	@Test
+	void testScoreStraightFlush() {
 		h.addCard(new Card(2, Suit.Spades));
 		h.addCard(new Card(3, Suit.Spades));
 		h.addCard(new Card(4, Suit.Spades));

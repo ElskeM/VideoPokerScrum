@@ -8,12 +8,9 @@ import java.io.Writer;
 
 public class WriteFile {
 
-	
-	
 	public void writeFile(int i) {
-	
+
 		BufferedWriter bw = null;
-	
 
 		try {
 			String credit = "" + i;
@@ -35,7 +32,7 @@ public class WriteFile {
 			} catch (Exception ex) {
 				System.out.println("Fel vid stängning av BufferedWriter" + ex);
 			}
-			
+
 		}
 	}
 }

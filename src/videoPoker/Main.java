@@ -7,12 +7,10 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-
 public class Main {
 
 	public static void main(String[] args) {
 
-	
 		System.out.println();
 
 		String s;
@@ -29,7 +27,6 @@ public class Main {
 					+ "|    0: Quit                      |\n" + "|*********************************|");
 
 			s = in.nextLine();
-			
 
 			try {
 				choice = Integer.parseInt(s);
@@ -37,11 +34,9 @@ public class Main {
 			} catch (Exception e) {
 				System.out.println("Felaktig inmatning! Endast tal!");
 			}
-			
-			
-			
+
 			switch (choice) {
-			case 1:	
+			case 1:
 				videoPoker.reset();
 				break;
 			case 2:
@@ -59,13 +54,10 @@ public class Main {
 			}
 
 		} while (choice != 0);
-	
-	
-}
-	
-}
 
+	}
 
+}
 
 class Regel extends JFrame {
 	public Regel() {// konstruktor ,anropas automatisk
@@ -80,7 +72,8 @@ class Regel extends JFrame {
 				+ "<td>9: ROYAL FLUSH </td><td>Tio, knekt, dam, kung och ess i samma kortsvit</td><td>250x</td>"
 				+ " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				+ "<tr>" + "<td>8: STRAIGHT FLUSH </td><td>Straight Flush - Fem kort i rad i samma kortsvit</td><td>50x</td>"
+				+ "<tr>"
+				+ "<td>8: STRAIGHT FLUSH </td><td>Straight Flush - Fem kort i rad i samma kortsvit</td><td>50x</td>"
 				+ "</tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>7: FOUR OF KIND</td><td>Fyra kort med samma valör</td><td>25x </td>" + "</tr>"
@@ -95,11 +88,12 @@ class Regel extends JFrame {
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>2: TWO PAIR</td><td>Två knektar eller bättre </td><td>2x<td>" + " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				+ "<tr>" + "<td>1 : PAIR OF JACKS OR BETTER  </td><td>Ett knekt eller bättre i rad</td><td>1x</td>" + "</tr>"
+				+ "<tr>" + "<td>1 : PAIR OF JACKS OR BETTER  </td><td>Ett knekt eller bättre i rad</td><td>1x</td>"
+				+ "</tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>3: NO COMBINATION</td><td>Inga kombination</td>0x<td>" + " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				
+
 				+ "<tr>*****************************************************************************"
 
 				+ "</tr>" + "</table></body></html>", JLabel.CENTER);
@@ -112,7 +106,6 @@ class Regel extends JFrame {
 
 		setSize(900, 600);
 		setVisible(true);
-
 
 	}
 

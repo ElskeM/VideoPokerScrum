@@ -77,7 +77,14 @@ public class VideoPoker {
 	}
 
 	public void drawCredit() {
-		credit -= stBet;
+		
+		if (credit == 0) {
+			System.out.println("Oops! Du har ingen kredit kvar! Spelet stänger av.");
+			new WriteFile().writeFile(getCredit());
+			System.exit(0);
+		} else {
+			credit -= stBet;
+		}
 	}
 
 	public void placeBet() {

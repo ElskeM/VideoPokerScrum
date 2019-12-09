@@ -42,5 +42,16 @@ public class Card implements Comparable {
 	public int compareTo(Object arg0) {
 		return getValue() - ((Card) arg0).getValue();
 	}
+
+	@Override
+	public boolean equals(Object arg0) { 
+		/*
+		 samband med Junit test metod testRemovCard
+		 vi overrider equals metod,som nu testar bara värde inte 
+		 Suit  :-D
+		 */
+		return getValue() == ((Card) arg0).getValue();
+	}
+	
 	
 }

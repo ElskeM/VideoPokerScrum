@@ -7,27 +7,26 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-
 public class Main {
 
 	public static void main(String[] args) {
 
-	//	Regel regel = new Regel();
 		System.out.println();
 
 		String s;
 		int choice = 0;
 		boolean loop = true;
 		Scanner in = new Scanner(System.in);
+		System.out.println("Välkommen till VideoPoker! Nu kör vi!");
+		System.out.println();
 		VideoPoker videoPoker = new VideoPoker();
 
 		do {
 			System.out.println("|*********************************|\n" + "|    Vad vill du göra?            |\n"
-					+ "|    1: Start VideoPoker          |\n" + "|    2: Fortsätta spela           |\n"
+					+ "|    1: Fortsätta spela           |\n" + "|    2: Visa regler               |\n"
 					+ "|    0: Quit                      |\n" + "|*********************************|");
 
 			s = in.nextLine();
-			
 
 			try {
 				choice = Integer.parseInt(s);
@@ -35,22 +34,19 @@ public class Main {
 			} catch (Exception e) {
 				System.out.println("Felaktig inmatning! Endast tal!");
 			}
-			
-			
+
 			switch (choice) {
-			case 1:	
-				int credit = Integer.parseInt(new Readfile().readfile());
-				videoPoker.setCredit(credit);
-				videoPoker.draw();
+			case 1:
+				videoPoker.reset();
 				break;
 			case 2:
-				videoPoker.reset();
+				Regel regel = new Regel();
 				break;
 			case 0:
 				new WriteFile().writeFile(videoPoker.getCredit());
 				System.out.println("Tack för att du spelade Video Poker!");
 				System.out.println("Vi ses nästa gång!");
-				in.close();
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Felaktig inmatning!");
@@ -58,13 +54,10 @@ public class Main {
 			}
 
 		} while (choice != 0);
-	
-	
-}
-	
-}
 
+	}
 
+}
 
 class Regel extends JFrame {
 	public Regel() {// konstruktor ,anropas automatisk
@@ -79,7 +72,8 @@ class Regel extends JFrame {
 				+ "<td>9: ROYAL FLUSH </td><td>Tio, knekt, dam, kung och ess i samma kortsvit</td><td>250x</td>"
 				+ " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				+ "<tr>" + "<td>8: STRAIGHT FLUSH </td><td>Straight Flush - Fem kort i rad i samma kortsvit</td><td>50x</td>"
+				+ "<tr>"
+				+ "<td>8: STRAIGHT FLUSH </td><td>Straight Flush - Fem kort i rad i samma kortsvit</td><td>50x</td>"
 				+ "</tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>7: FOUR OF KIND</td><td>Fyra kort med samma valör</td><td>25x </td>" + "</tr>"
@@ -94,24 +88,23 @@ class Regel extends JFrame {
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>2: TWO PAIR</td><td>Två knektar eller bättre </td><td>2x<td>" + " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				+ "<tr>" + "<td>1 : PAIR OF JACKS OR BETTER  </td><td>Ett knekt eller bättre i rad</td><td>1x</td>" + "</tr>"
+				+ "<tr>" + "<td>1 : PAIR OF JACKS OR BETTER  </td><td>Ett knekt eller bättre i rad</td><td>1x</td>"
+				+ "</tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
 				+ "<tr>" + "<td>3: NO COMBINATION</td><td>Inga kombination</td>0x<td>" + " </tr>"
 				+ "<tr>--------------------------------------------------------------------------------------------------</tr>"
-				
+
 				+ "<tr>*****************************************************************************"
 
 				+ "</tr>" + "</table></body></html>", JLabel.CENTER);
 
 		add(reg);// placera reg i fönster
 		reg.setOpaque(true);
-		reg.setBackground(Color.GREEN);
+		reg.setBackground(new Color(0,153,0));
 		reg.setForeground(Color.BLACK);
-		reg.setFont((new Font("SansSerif", Font.ITALIC, 12)));
-
-		setSize(900, 600);
+		reg.setFont((new Font("SansSerif", Font.BOLD, 12)));
+		setSize(950, 650);
 		setVisible(true);
-
 
 	}
 

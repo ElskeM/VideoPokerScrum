@@ -7,8 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Readfile {
-	
-	
+
 	public String readfile() {
 
 		File file = new File("src/videoPoker/sparadSpel.txt");
@@ -23,7 +22,7 @@ public class Readfile {
 
 		String line = "";
 		try {
-				line = br.readLine();
+			line = br.readLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

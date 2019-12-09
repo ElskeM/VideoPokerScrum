@@ -32,6 +32,7 @@ public class Tester {
 		assertEquals(Combination.ThreeOfaKind, h.handScore());
 	}
 
+	@Test
 	void testScoreFourOfaKind() {
 		h.addCard(new Card (12, Suit.Hearts));
 		h.addCard(new Card(12, Suit.Spades));
@@ -50,6 +51,7 @@ public class Tester {
 		h.addCard(new Card(4, Suit.Spades));
 		assertEquals(Combination.PairOfJacksOrBetter, h.handScore());
 	}
+	
 	@Test
 	void testScoreTwoPair() {
 		h.addCard(new Card(12, Suit.Hearts));
@@ -128,7 +130,6 @@ public class Tester {
 		h.addCard(new Card(10, Suit.Spades));
 		assertEquals(Combination.NoCombination, h.handScore());
 	}
-	
 }
 
 

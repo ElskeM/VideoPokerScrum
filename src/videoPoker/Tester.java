@@ -70,15 +70,15 @@ public class Tester {
 		h.addCard(new Card(6, Suit.Spades));
 		assertEquals(Combination.StraightFlush, h.handScore());
 	}
-//	@Test
-//	void testScoreRoyalFlush() {
-//		h.addCard(new Card(1, Suit.Spades));
-//		h.addCard(new Card(10, Suit.Spades));
-//		h.addCard(new Card(11, Suit.Spades));
-//		h.addCard(new Card(12, Suit.Spades));
-//		h.addCard(new Card(13, Suit.Spades));
-//		assertEquals(Combination.RoyalFlush, h.handScore());
-//	}
+	@Test
+	void testScoreRoyalFlush() {
+		h.addCard(new Card(1, Suit.Spades));
+		h.addCard(new Card(10, Suit.Spades));
+		h.addCard(new Card(11, Suit.Spades));
+		h.addCard(new Card(12, Suit.Spades));
+		h.addCard(new Card(13, Suit.Spades));
+		assertEquals(Combination.RoyalFlush, h.handScore());
+	}
 	
 	@Test
 	void testScoreFullHouse() {

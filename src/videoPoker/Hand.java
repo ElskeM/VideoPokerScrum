@@ -92,8 +92,11 @@ package videoPoker;
 					Flush = true;
 					if (Straight == true) {
 						StraightFlush = true;
-						RoyalFlush = hand.get(0).getValue() == 1 && hand.get(1).getValue() == 10;
-					}
+						}
+				}
+				if(Flush == true && hand.get(0).getValue() == 1 && hand.get(1).getValue() == 10) {
+					RoyalFlush = true;
+				
 				}
 			}
 			

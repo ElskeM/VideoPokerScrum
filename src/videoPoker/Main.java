@@ -12,16 +12,14 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		System.out.println("Välkommen till VideoPoker! Du har " + new Readfile().readfile() + " krediter");
-
 		Regel regel = new Regel();
-
 		System.out.println();
 
 		String s;
 		int choice = 0;
 		boolean loop = true;
 		Scanner in = new Scanner(System.in);
+		VideoPoker videoPoker = new VideoPoker();
 
 		do {
 			System.out.println("|*********************************|\n" + "|    Vad vill du göra?            |\n"
@@ -36,7 +34,7 @@ public class Main {
 			} catch (Exception e) {
 				System.out.println("Felaktig inmatning! Endast tal!");
 			}
-			VideoPoker videoPoker = new VideoPoker();
+
 			switch (choice) {
 			case 1:
 				int credit = Integer.parseInt(new Readfile().readfile());
@@ -46,7 +44,6 @@ public class Main {
 			case 2:
 				videoPoker = new VideoPoker();
 				break;
-
 			case 0:
 				new WriteFile().writeFile(videoPoker.getCredit());
 				System.out.println("Tack för att du spelade Video Poker!");
@@ -59,9 +56,13 @@ public class Main {
 			}
 
 		} while (choice != 0);
-
-	}
+	
+	
 }
+	
+}
+
+
 
 class Regel extends JFrame {
 	public Regel() {// konstruktor ,anropas automatisk
@@ -102,7 +103,6 @@ class Regel extends JFrame {
 
 		setSize(900, 600);
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
 

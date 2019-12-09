@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 
 public class Main {
 
@@ -108,7 +108,7 @@ class Regel extends JFrame {
 
 		setSize(900, 600);
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
 

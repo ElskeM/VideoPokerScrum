@@ -13,9 +13,9 @@ public class VideoPoker {
 	private int stBet = 10;
 	private String betSvar;
 
-	//konstruktor-sambad med ReadFile
+	// konstruktor-sambad med ReadFile
 	public VideoPoker(String gamlaScore) {// får värde från manin
-										//- videoPoker= new VideoPoker(new Readfile().readfile());
+											// - videoPoker= new VideoPoker(new Readfile().readfile());
 		deck.shuffle();
 		drawCredit();
 		draw();
@@ -53,9 +53,8 @@ public class VideoPoker {
 					playerHand.addCard(deck.draw());
 				}
 				System.out.println("Du vill byta ut " + antalKort + " kort.");
-				System.out.println("Detta är din hand: " + playerHand.getCard(0) + ", "
-						+ playerHand.getCard(1) + ", " + playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", "
-						+ playerHand.getCard(4));
+				System.out.println("Detta är din hand: " + playerHand.getCard(0) + ", " + playerHand.getCard(1) + ", "
+						+ playerHand.getCard(2) + ", " + playerHand.getCard(3) + ", " + playerHand.getCard(4));
 				placeBet();
 				loop = false;
 			} else if (answer.equalsIgnoreCase("n")) {
@@ -86,14 +85,12 @@ public class VideoPoker {
 					betLoop = true;
 				} else {
 					credit -= bet;
-					System.out.println("Du satsade: " + bet
-							+ " krediter.");
+					System.out.println("Du satsade: " + bet + " krediter.");
 					creditAfterBetting();
 					betLoop = false;
 				}
 			} else if (betSvar.equalsIgnoreCase("n")) {
-				System.out.println(
-						"Du satsade inga extra krediter.");
+				System.out.println("Du satsade inga extra krediter.");
 				creditAfterBetting();
 				betLoop = false;
 			} else {
@@ -104,19 +101,22 @@ public class VideoPoker {
 	}
 
 	public void creditAfterBetting() {
-		if (playerHand.handScore() == playerHand.handScore().NoCombination) {
-			System.out.println("\nTyvärr! Du fick ingen kombination! Du har nu " + credit + " krediter kvar.");
-		} else {
-			bet += stBet;
-			bet *= playerHand.handScore().value;
-			credit += bet;
-
-
-			//bet = 0;
-			System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet + "krediter och har nu "
-					+ credit + " krediter på ditt konto.");
-			bet = 0;
-		}
+		boolean cAB;
+		do {
+			if (playerHand.handScore() == playerHand.handScore().NoCombination) {
+				System.out.println("\nTyvärr! Du fick ingen kombination! Du har nu " + credit + " krediter kvar.");
+				cAB = false;
+			} else {
+				bet += stBet;
+				bet *= playerHand.handScore().value;
+				credit += bet;
+				System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet
+						+ "krediter och har nu " + credit + " krediter på ditt konto.");
+				bet = 0;
+				cAB = false;
+			}
+		} while (cAB != false);
+		
 	}
 
 	public void setCredit(int credit) {
@@ -134,6 +134,6 @@ public class VideoPoker {
 		deck = new Deck();
 		deck.shuffle();
 		draw();
-		drawCredit();
 	}
+
 }

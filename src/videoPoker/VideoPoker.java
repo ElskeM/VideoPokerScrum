@@ -14,7 +14,8 @@ public class VideoPoker {
 	private String betSvar;
 
 	// konstruktor-samband med ReadFile
-	// får värde från manin// - videoPoker= new VideoPoker(new Readfile().readfile());
+	// får värde från manin// - videoPoker= new VideoPoker(new
+	// Readfile().readfile());
 	public VideoPoker() {
 		int sparadS = Integer.parseInt(new Readfile().readfile());
 		if (sparadS == 0) {
@@ -23,12 +24,12 @@ public class VideoPoker {
 		} else {
 			setCredit(sparadS);
 			System.out.println("Du har " + sparadS + " krediter på ditt konto.");
-			startSpel();	
-		}	
+			startSpel();
+		}
 	}
 
 	public void startSpel() {
-		
+
 		deck.shuffle();
 		drawCredit();
 		draw();
@@ -119,7 +120,8 @@ public class VideoPoker {
 				bet *= playerHand.handScore().value;
 				credit += bet;
 				System.out.println("Grattis! Du fick " + playerHand.handScore() + "! Du vann " + bet
-						+ "krediter (ditt bet inkl 10 krediter standard bet) och har nu " + credit + " krediter på ditt konto.");
+						+ "krediter (ditt bet inkl 10 krediter standard bet) och har nu " + credit
+						+ " krediter på ditt konto.");
 				bet = 0;
 				cAB = false;
 

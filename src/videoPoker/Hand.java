@@ -111,9 +111,10 @@ public class Hand {
 					StraightFlush = true;
 				}
 			}
-			if (Flush == true && hand.get(0).getValue() == 1 && hand.get(1).getValue() == 10) {
+			if (Flush == true && hand.get(0).getValue() == 1 && hand.get(1).getValue() == 10 
+					&& hand.get(2).getValue() == 11 && hand.get(3).getValue() == 12 
+					&& hand.get(4).getValue() == 13) {
 				RoyalFlush = true;
-
 			}
 		}
 

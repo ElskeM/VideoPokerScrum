@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 public class Main {
 
 	public static void main(String[] args) {
-
+		Regel regel = new Regel();
 		System.out.println();
 
 		String s;
@@ -40,7 +40,7 @@ public class Main {
 				videoPoker.reset();
 				break;
 			case 2:
-				Regel regel = new Regel();
+				Regel regel2 = new Regel();
 				break;
 			case 0:
 				new WriteFile().writeFile(videoPoker.getCredit());

@@ -31,10 +31,10 @@ public class Tester {
 
 	@Test
 	void testScoreFourOfaKind() {
-		h.addCard(new Card(12, Suit.Hearts));
-		h.addCard(new Card(12, Suit.Spades));
-		h.addCard(new Card(12, Suit.Clubs));
-		h.addCard(new Card(12, Suit.Diamonds));
+		h.addCard(new Card(10, Suit.Hearts));
+		h.addCard(new Card(10, Suit.Spades));
+		h.addCard(new Card(10, Suit.Clubs));
+		h.addCard(new Card(10, Suit.Diamonds));
 		h.addCard(new Card(6, Suit.Spades));
 		assertEquals(Combination.FourOfaKind, h.handScore());
 	}

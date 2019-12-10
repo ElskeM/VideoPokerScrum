@@ -80,7 +80,7 @@ public class Hand {
 					PairOfJacks = jacksOrBetter();
 				}
 			}
-			if ((i < 4) && hand.get(i).getValue() == hand.get(i + 1).getValue()
+			if ((i < 2) && hand.get(i).getValue() == hand.get(i + 1).getValue()
 					&& hand.get(i + 1).getValue() == hand.get(i + 2).getValue() && hand.get(i + 2) == hand.get(i + 3)) {
 				FourOfAKind = true;
 			}

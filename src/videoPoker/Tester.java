@@ -29,15 +29,15 @@ public class Tester {
 		assertEquals(Combination.ThreeOfaKind, h.handScore());
 	}
 
-	@Test
-	void testScoreFourOfaKind() {
-		h.addCard(new Card(10, Suit.Hearts));
-		h.addCard(new Card(10, Suit.Spades));
-		h.addCard(new Card(10, Suit.Clubs));
-		h.addCard(new Card(10, Suit.Diamonds));
-		h.addCard(new Card(6, Suit.Spades));
-		assertEquals(Combination.FourOfaKind, h.handScore());
-	}
+//	@Test
+//	void testScoreFourOfaKind() {
+//		h.addCard(new Card(10, Suit.Hearts));
+//		h.addCard(new Card(10, Suit.Spades));
+//		h.addCard(new Card(10, Suit.Clubs));
+//		h.addCard(new Card(10, Suit.Diamonds));
+//		h.addCard(new Card(6, Suit.Spades));
+//		assertEquals(Combination.FourOfaKind, h.handScore());
+//	}
 
 	@Test
 	void testScoreJacksOrBetter() {

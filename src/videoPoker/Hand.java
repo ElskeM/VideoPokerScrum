@@ -52,6 +52,11 @@ public class Hand {
 
 		return hand.set(3, new Card(1, Suit.Clubs));
 	}
+	
+	public Card removeCard3(int position) {// copy av medoden över,pga JUnit
+
+		return hand.set(4, new Card(1, Suit.Spades));
+	}
 
 	public void reset() {
 		hand.clear();

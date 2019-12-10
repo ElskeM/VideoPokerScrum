@@ -10,7 +10,7 @@ public class Tester {
 	private Card c;
 	private Deck d;
 	private Hand h;
-	private List<Card> hand;
+	
 
 	@BeforeEach
 	void skapaSpel2() {
@@ -148,7 +148,7 @@ public class Tester {
 				new Card(10, Suit.Clubs), new Card(10, Suit.Spades));
 
 		hand4.addCards(new Card(2, Suit.Spades), new Card(3, Suit.Diamonds), new Card(5, Suit.Spades),
-				new Card(1, Suit.Clubs), new Card(10, Suit.Spades));
+				new Card(1, Suit.Clubs), new Card(1, Suit.Spades));
 
 		for (int i = 0; i <= 4; i++) {
 			System.out.println(hand3.getCard(i));
@@ -161,6 +161,9 @@ public class Tester {
 		hand3.removeCard2(3); // anropa metoden i hand som ändrar kort på position 3
 							  // och sätter samma värde och suit som kort i hand4
 							  //1, Suit.Clubs
+		
+		hand3.removeCard3(4);
+		
 		System.out.println();
 
 		for (int i = 0; i <= 4; i++) {
